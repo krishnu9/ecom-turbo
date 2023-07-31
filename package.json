@@ -1,5 +1,4 @@
 {
-  "private": true,
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
@@ -13,7 +12,8 @@
     "prettier": "^2.5.1",
     "turbo": "latest"
   },
-  "name": "ecom-turborepo",
+  "name": "mern-turborepo-starter",
+  "version": "1.0.1",
   "packageManager": "npm@9.5.1",
   "workspaces": [
     "apps/*",

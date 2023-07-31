@@ -1,13 +1,14 @@
-# Turborepo starter
+# MERN Turborepo starter
 
-This is an official starter Turborepo.
+This is a starter Turborepo template for MERN Apps.
 
 ## Using this example
 
 Run the following command:
 
 ```sh
-npx create-turbo@latest
+npm i mern-turborepo-starter
+npm install
 ```
 
 ## What's inside?
@@ -16,9 +17,8 @@ This Turborepo includes the following packages/apps:
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
+- `server`: an Express.js app configured with Vite
+- `www`: a React.js app configured with Vite
 - `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
 
@@ -38,7 +38,7 @@ To build all apps and packages, run the following command:
 
 ```
 cd my-turborepo
-pnpm build
+npm build
 ```
 
 ### Develop
@@ -47,7 +47,7 @@ To develop all apps and packages, run the following command:
 
 ```
 cd my-turborepo
-pnpm dev
+npm dev
 ```
 
 ### Remote Caching
