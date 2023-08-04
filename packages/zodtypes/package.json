@@ -1,0 +1,11 @@
+{
+  "name": "zodtypes",
+  "version": "1.0.0",
+  "description": "types",
+  "main": "src/index.js",
+  "author": "krishnu",
+  "license": "ISC",
+  "dependencies": {
+    "zod": "^3.21.4"
+  }
+}

@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import { PrismaClient } from "@prisma/client";
+import { createItemInput } from "zodtypes";
 
 const app = express();
 dotenv.config();
@@ -18,15 +19,19 @@ app.get("/item", async (req, res) => {
 });
 
 app.post("/item", async (req, res) => {
-  const item = await prisma.item.create({
+  const parsedItem = createItemInput.safeParse(req.body);
+  if (!parsedItem.success) {
+    return res.status(411).json({
+      error: parsedItem.error.message
+    })
+  }
+  const createdItem = await prisma.item.create({
     data: {
-      title: req.body.title,
-      price: req.body.price,
+      title: parsedItem.data.title,
+      price: parsedItem.data.price,
     },
   });
-  res.json(item);
-  // console.log("Request body - ", req.body)
-  res.json(req.body);
+  res.json(createdItem.id);
 });
 
 if (import.meta.env.PROD) app.listen(3000);
